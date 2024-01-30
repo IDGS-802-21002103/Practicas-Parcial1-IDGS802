@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% import '_macros.html' as macros %}
+{% block content %}
+
+<div class="row p-5">
+    <div class="col card m-3 p-4 align-items-center shadow">
+        <div class="h1">
+            <kbd>DISTANCIA ENTRE 2 PUNTOS</kbd>
+        </div>
+
+        <div>
+            <form action="" method="post">
+                <div>
+                    {{ macros.input_form(form.x1, class='form-control') }}
+                </div>
+                <div>
+                    {{ macros.input_form(form.y1, class='form-control') }}
+                </div>
+                <div>
+                    {{ macros.input_form(form.x2, class='form-control') }}
+                </div>
+                <div>
+                    {{ macros.input_form(form.y2, class='form-control') }}
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" value="Calcular" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col card m-3 p-4 align-items-center shadow">
+        <div class="h1">
+            <kbd>DISTANCIA</kbd>
+        </div>
+        <div>
+            <span class="h3">{{ distancia}}</span>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
