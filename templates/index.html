@@ -44,7 +44,21 @@
 
     {% endblock %}
   </div>
-  <script src="../static/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+  <script src="../static/bootstrap-5.3.2-dist/js/bootstrap.min.js">
+    
+  </script>
+  <script>
+    function limpiar() {
+      console.log('limpiando');
+      document.getElementById('nombre').value = '';
+      document.getElementById('apellido_paterno').value = '';
+      document.getElementById('apellido_materno').value = '';
+      document.getElementById('dia').value = '';
+      document.getElementById('mes').value = '';
+      document.getElementById('anio').value = '';
+      document.getElementById('sexo').value = '';
+    }
+  </script>
 </body>
 
 </html>

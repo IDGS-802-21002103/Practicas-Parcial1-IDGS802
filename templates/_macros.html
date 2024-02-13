@@ -6,3 +6,20 @@
 <td>{{field.label}}</td>
 <dd>{{field(**kwargs)|safe}}</dd>
 {% endmacro %}
+
+{% macro input_form_v2(field) %}
+<div class="p-2">
+    <label for="{{field.id}}">{{field.label}}</label>
+    {{field(**kwargs)|safe}}
+</div>
+{% endmacro %}
+
+{% macro radio_button(field) %}
+<div class="form-check">
+    <label class="form-check-label" for="{{ field.id }}">{{ field.label}}</label>
+    {{field(**kwargs)|safe}}
+    
+</div>
+    
+{% endmacro %}
+

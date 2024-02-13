@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% import '_macros.html' as macros %}
+
+{% block content %}
+<div class="row card m-3 p-4 align-items-center shadow">
+    <div class="col">
+        <div class="h1 d-flex justify-content-center">
+            <kbd>ZODIACO</kbd>
+        </div>
+        <form action="" method="POST">
+            <div class="col">
+                <div class="row">
+                    {{ macros.input_form_v2(form.nombre, class='form-control') }}
+                </div>
+
+                <div class="row">
+                    {{ macros.input_form_v2(form.apellido_paterno, class='form-control') }}
+                </div>
+
+                <div class="row">
+                    {{ macros.input_form_v2(form.apellido_materno, class='form-control') }}
+                </div>
+
+                <div class="row p-0">
+                    <div class="col">
+                        {{ macros.input_form_v2(form.dia, class='form-control') }}
+                    </div>
+
+                    <div class="col">
+                        {{ macros.input_form_v2(form.mes, class='form-control') }}
+                    </div>
+                    <div class="col">
+                        {{ macros.input_form_v2(form.anio, class='form-control') }}
+                    </div>
+                </div>
+                <div class="row">
+                        {{ macros.radio_button(form.sexo) }}
+                </div>
+
+                <div class="    d-flex justify-content-center">
+                    <input type="submit" value="CALCULAR" class="btn btn-success m-2">
+                    <button type="button" class="btn btn-secondary m-2" onclick="limpiar()">LIMPIAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
