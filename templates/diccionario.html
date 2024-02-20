@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% import '_macros.html' as macros %}
+{% block content %}
+
+<div class="row ">
+    <div class="col card m-3 p-4 align-items-center shadow">
+        <div class="row">
+            <h1 class="h1">
+                <kbd class="">DICCIONARIO</kbd>
+            </h1>
+        </div>
+        <div class="row">
+            <form action="/diccionario" method="POST" class="card m-2 p-2" novalidate>
+                <div class="col">
+                    {{ macros.input_form_v2(diccionario_form.ingles, class='form-control') }}
+                </div>
+                <div class="col">
+                    {{ macros.input_form_v2(diccionario_form.espanol, class='form-control') }}
+                </div>
+                <div class="col text-center">
+                    <input type="submit" value="AGREGAR" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <form action="" method="POST" class="card m-2 p-2" novalidate>
+
+                <div class="col">
+                    {{ macros.radio_button(busqueda_palabra_form.seleccion) }}
+                </div>
+                <div class="col">
+                    {{ macros.input_form_v2(busqueda_palabra_form.palabra, class='form-control') }}
+                </div>
+
+
+                <div class="row">
+                    <div class="col text-center">
+                        <input type="submit" value="CONSULTAR" class="btn btn-primary">
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+
+    <div class="col card m-3 p-4 align-items-center shadow">
+        <div class="row">
+            <h1>
+                <kbd>PALABRA</kbd>
+            </h1>
+
+        </div>
+        <div class="row">
+            <span class="h3">{{ palabra }}</span>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

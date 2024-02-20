@@ -11,6 +11,16 @@
 <div class="p-2">
     <label for="{{field.id}}">{{field.label}}</label>
     {{field(**kwargs)|safe}}
+    {% if field.errors %}
+    <ul>
+        {% for error in field.errors %}
+        <li style="color: red;">
+             {{ error }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+    {% endif %}
 </div>
 {% endmacro %}
 
@@ -18,8 +28,7 @@
 <div class="form-check">
     <label class="form-check-label" for="{{ field.id }}">{{ field.label}}</label>
     {{field(**kwargs)|safe}}
-    
-</div>
-    
-{% endmacro %}
 
+</div>
+
+{% endmacro %}
